@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart City Navigation</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Smart City Navigation using PageRank</h1>
+  <p>This page shows which intersections are most important based on traffic flow.</p>
+  <h2>Intersection Importance (PageRank Score)</h2>
+  <ul>
+    {% for node, rank in pagerank.items() %}
+      <li><strong>{{ node }}</strong>: {{ "%.4f"|format(rank) }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
